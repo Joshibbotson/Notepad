@@ -1,23 +1,31 @@
-// document.getElementById('addItem').addEventListener('click', function() {
-//     localStorage.setItem('users', JSON.stringify({name: "Josh Ibbotson", colour: "black", age: "26"})
-//     );
-//     updateUI();
-// });
+document.getElementById('submitFormBtn').addEventListener('click', revealNote());
 
 document.getElementById('description').addEventListener('input', function() {
-    localStorage.setItem('Note', JSON.stringify({ title: title.value, description: description.value}));  
-})
-
-document.getElementById('description').addEventListener('input', letter=> {
-    let values = JSON.parse(localStorage.getItem('Note'));
-    document.getElementById('descriptionProjection').textContent = letter.target.values; 
+    const time = new Date().toLocaleString();
+    localStorage.setItem('Note', JSON.stringify({ title: title.value, description: description.value}));
+    localStorage.setItem('Time', JSON.stringify({ date: time}));
 })
 
 
-// function revealNote () {
-//     let values = JSON.parse(localStorage.getItem('Note'.title));
-//     document.getElementById('descriptionProjection').textContent = values; 
-// }
+
+function revealNote() {
+    let titleReveal = JSON.parse(localStorage.getItem('Note')).title;
+    document.getElementById('titleProjection').textContent = titleReveal;
+
+    let descriptionReveal = JSON.parse(localStorage.getItem('Note')).description;
+    document.getElementById('descriptionProjection').textContent = descriptionReveal; 
+    
+    let timeReveal = JSON.parse(localStorage.getItem('Time')).date;
+    document.getElementById('timeProjection').textContent = timeReveal;
+}
+
+
+
+
+
+
+
+
 
 
 // function updateUI() {
@@ -29,11 +37,4 @@ document.getElementById('description').addEventListener('input', letter=> {
 //      }
     
 //     document.getElementById('descriptionProjection').textContent = values; 
-// }
-
-// function updateUI() {
-//     let values = JSON.parse(window.localStorage.getItem('Note'));
-//     document.getElementById('descriptionProjection').innerHTML = values; 
-// console.log (values);
-    
 // }
