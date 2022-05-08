@@ -1,4 +1,6 @@
 
+
+
 // reveals note creator form//
 const plus = document.getElementById('circle')
 plus.addEventListener("click", revealNoteCreator)
@@ -19,7 +21,7 @@ document.getElementById('description').addEventListener('input', function() {
 document.getElementById('submitFormBtn').addEventListener('click', revealNote());
 
 function revealNote() {
-    let titleReveal = JSON.parse(localStorage.getItem('Note')).title[02];
+    let titleReveal = JSON.parse(localStorage.getItem('Note')).title;
     document.getElementById('titleProjection').textContent = titleReveal;
 
     let descriptionReveal = JSON.parse(localStorage.getItem('Note')).description;
