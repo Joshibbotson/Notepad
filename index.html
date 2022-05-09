@@ -12,7 +12,7 @@
     
 </head>
 <body>
-    <div class="create-note">
+    <div class="create-note" id="createNote">
         <div class="circle" id="circle">
             <div class="plus" id="plus">+</div>
         </div>
@@ -20,7 +20,11 @@
     </div>
     <div class="main-container" id="mainContainer">
         <form action="#" class="form-note">
-            <label for="title">Title</label>
+            <div class="title-container">
+                <label for="title">Title</label>
+                <button class="exit" id="exitBtn">	
+                    &#215; </button>
+            </div>
             <input type="text" name="title" id="title" class="note-title">
             <label for="description:">Description</label>
             <textarea type="text" name="description" id="description">Write here...</textarea>
@@ -28,12 +32,12 @@
             <input type="submit" value="Submit"  id="submitFormBtn">
         </form>
     </div>
-    <span><div class="note">
+    <div class="note" id="note">
         <div class="title-projection" id="titleProjection"></div>
         <textarea readonly class="description-projection" id="descriptionProjection"></textarea>
         <hr class="note-hr">
         <div class="time" id="timeProjection"></div>
-    </div></span>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
